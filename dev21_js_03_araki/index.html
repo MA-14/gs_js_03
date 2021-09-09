@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筋トレ管理</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header_wrapper">
+      <div class="col-sm-10 title">
+        <img src="img/1.jpg" class="header_img">
+        <h1 class="header_m">GOLD'S GYM TRAINING NOTE</h1>
+      </div>
+      <div class="menu col-sm-2 ">
+        <a href="home.html" class="home">HOMEへ戻る</a>
+        <a href="rireki.html" class="rireki">履歴</a>
+      </div>
+    </header>
+  </div>
+    <hr>
+  
+  <!-- メッセージ、日付、開始時間、経過時間 -->
+  <div class="container record">  
+      <p class="title_message">Just do it.</p>
+      <div class="row">
+        <div class="col-sm-4 date_wrapper">
+          <label for="date">日付：</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="col-sm-5 start_time_wrapper">
+          <label for="start_time">開始時間</label>
+          <!-- 開始ボタンをクリックした時間を挿入 -->
+          <p class="start_time" id="start_time"></p>
+        </div>
+        <div class="col-sm-3 keika_time_wrapper">
+          <label for="keika_time">経過時間</label>
+          <!-- 今の時間から開始ボタンをクリックした時間を引いた値を挿入 -->
+          <p class="keika_time" id="keika_time"></p>
+        </div>
+      </div>
+  </div>
+  
+  <!-- 表 -->
+  <div class="container record_content">
+    <table class="table">
+      
+      <thead>
+        <tr>
+          <th scope="col" class="record_title">種目</th>
+          <th scope="col" class="record_title">1set</th>
+          <th scope="col" class="record_title">2set</th>
+          <th scope="col" class="record_title">3set</th>
+          <th scope="col" class="record_title">4set</th>
+          <th scope="col" class="record_title">5set</th>
+        </tr>
+      </thead>
+      <!-- 1種目目 -->
+      <tbody class="table-warning">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku1" class="syumoku">
+            <option></option>
+            <option>ベンチプレス</option>
+            <option>スクワット</option>
+            <option >デッドリフト</option>
+            <option>チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight1_1">×<input type="text" class="kai" placeholder="(回)" id="rep1_1"></td>
+        <td class="record_content"><input type="text" class="kg"id="weight1_2">×<input type="text" class="kai"id="rep1_2"></td>
+        <td class="record_content"><input type="text" class="kg"id="weight1_3">×<input type="text" class="kai"id="rep1_3"></td>
+        <td class="record_content"><input type="text" class="kg"id="weight1_4">×<input type="text" class="kai"id="rep1_4"></td>
+        <td class="record_content"><input type="text" class="kg"id="weight1_5">×<input type="text" class="kai"id="rep1_5"></td>
+      </tbody>
+      <!-- 以下2-8種目目（for文で繰り返し処理試みましたが挫折しました。。。） -->
+      <tbody class="table-secondary">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku2" class="syumoku">
+            <option value=""></option>
+            <option>ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight2_1">×<input type="text" class="kai" placeholder="(回)" id="rep2_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight2_2">×<input type="text" class="kai" id="rep2_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight2_3">×<input type="text" class="kai" id="rep2_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight2_4">×<input type="text" class="kai" id="rep2_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight2_5">×<input type="text" class="kai" id="rep2_5"></td>
+      </tbody>
+      <tbody class="table-warning">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku3" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight3_1">×<input type="text" class="kai" placeholder="(回)" id="rep3_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight3_2">×<input type="text" class="kai" id="rep3_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight3_3">×<input type="text" class="kai" id="rep3_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight3_4">×<input type="text" class="kai" id="rep3_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight3_5">×<input type="text" class="kai" id="rep3_5"></td>
+      </tbody>
+      <tbody class="table-secondary">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku4" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight4_1">×<input type="text" class="kai" placeholder="(回)" id="rep4_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight4_2">×<input type="text" class="kai" id="rep4_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight4_3">×<input type="text" class="kai" id="rep4_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight4_4">×<input type="text" class="kai" id="rep4_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight4_5">×<input type="text" class="kai" id="rep4_5"></td>
+      </tbody>
+      <tbody class="table-warning">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku5" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight5_1">×<input type="text" class="kai" placeholder="(回)" id="rep5_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight5_2">×<input type="text" class="kai" id="rep5_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight5_3">×<input type="text" class="kai" id="rep5_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight5_4">×<input type="text" class="kai" id="rep5_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight5_5">×<input type="text" class="kai" id="rep5_5"></td>
+      </tbody>
+      <tbody  class="table-secondary">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku6" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight6_1">×<input type="text" class="kai" placeholder="(回)" id="rep6_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight6_2">×<input type="text" class="kai" id="rep6_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight6_3">×<input type="text" class="kai" id="rep6_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight6_4">×<input type="text" class="kai" id="rep6_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight6_5">×<input type="text" class="kai" id="rep6_5"></td>
+      </tbody>
+      <tbody class="table-warning">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku7" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight7_1">×<input type="text" class="kai" placeholder="(回)" id="rep7_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight7_2">×<input type="text" class="kai" id="rep7_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight7_3">×<input type="text" class="kai" id="rep7_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight7_4">×<input type="text" class="kai" id="rep7_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight7_5">×<input type="text" class="kai" id="rep7_5"></td>
+      </tbody>
+      <tbody class="table-secondary">
+        <th scope="row" class="record_content">
+          <select name="syumoku" id="syumoku8" class="syumoku">
+            <option value=""></option>
+            <option >ベンチプレス</option>
+            <option >スクワット</option>
+            <option >デッドリフト</option>
+            <option >チンニング</option>
+          </select>
+        </th>
+        <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight8_1">×<input type="text" class="kai" placeholder="(回)" id="rep8_1"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight8_2">×<input type="text" class="kai" id="rep8_2"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight8_3">×<input type="text" class="kai" id="rep8_3"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight8_4">×<input type="text" class="kai" id="rep8_4"></td>
+        <td class="record_content"><input type="text" class="kg" id="weight8_5">×<input type="text" class="kai" id="rep8_5"></td>
+      </tbody>
+      
+    </table>
+  </div>
+  <div class="workout_end">
+    <button class="save" id="save" onclick="location.href=`home.html`">トレーニング終了</button>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase.js"></script>
+    <script>
+
+      
+      var now = new Date();
+      var month = now.getMonth()+1;
+      var date = now.getDate();
+      var hour= now.getHours();
+      var min= now.getMinutes();
+      var key= {month,date}
+      const from_json_value = JSON.parse(localStorage.getItem(JSON.stringify(key)));
+      console.log(now.getMinutes()>=from_json_value.min)
+
+      // 経過時間の表示
+      if(now.getMinutes()>=from_json_value.min){
+        keika_min=now.getMinutes()-from_json_value.min
+        console.log(keika_min)
+        $("#keika_time").html(keika_min+"分")
+      }else if(now.getHours()>=from_json_value.hour){
+        let keika_min = now.getMinutes()-from_json_value.min+60
+        let keika_hour = now.getHours()-from_json_value.hour
+        $("#keika_time").html(keika_hour+"時間"+keika_min+"分")
+      }else{
+        let keika_min = now.getMinutes()-from_json_value.min+60
+        let keika_hour = now.getHours()-from_json_value.hour+24
+        $("#keika_time").html(keika_hour+"時間"+keika_min+"分")
+      }
+
+      // 今日の筋トレ開始時間をローカルストレージから取得して表示
+      if (from_json_value.min<10){
+      from_json_value.min="0"+from_json_value.min
+      }
+      $("#start_time").html(from_json_value.hour+":"+from_json_value.min)
+
+      // firebaseの設定
+      const firebaseConfig = {
+          apiKey: "AIzaSyAH9PHBS9qYb1e7RSXMBJfAWHWWKh5dEVg",
+          authDomain: "workout-memo-e1313.firebaseapp.com",
+          projectId: "workout-memo-e1313",
+          storageBucket: "workout-memo-e1313.appspot.com",
+          messagingSenderId: "631920409298",
+          appId: "1:631920409298:web:f2efe11c07fb65680c8b0b",
+          databaseURL: "https://workout-memo-e1313-default-rtdb.firebaseio.com/",
+        };
+
+      firebase.initializeApp(firebaseConfig);
+      const newPostRef = firebase.database();
+      $("#save").on("click",function(){
+        localStorage.clear();
+        const d = $("#date").val();
+        newPostRef.ref(d).set({
+          date:$("#date").val(),
+          syumoku1:$("#syumoku1").val(),
+          weight1_1:$("#weight1_1").val(),
+          weight1_2:$("#weight1_2").val(),
+          weight1_3:$("#weight1_3").val(),
+          weight1_4:$("#weight1_4").val(),
+          weight1_5:$("#weight1_5").val(),
+          rep1_1:$("#rep1_1").val(),
+          rep1_2:$("#rep1_2").val(),
+          rep1_3:$("#rep1_3").val(),
+          rep1_4:$("#rep1_4").val(),
+          rep1_5:$("#rep1_5").val(),
+
+          syumoku2:$("#syumoku2").val(),
+          weight2_1:$("#weight2_1").val(),
+          weight2_2:$("#weight2_2").val(),
+          weight2_3:$("#weight2_3").val(),
+          weight2_4:$("#weight2_4").val(),
+          weight2_5:$("#weight2_5").val(),
+          rep2_1:$("#rep2_1").val(),
+          rep2_2:$("#rep2_2").val(),
+          rep2_3:$("#rep2_3").val(),
+          rep2_4:$("#rep2_4").val(),
+          rep2_5:$("#rep2_5").val(),
+
+          syumoku3:$("#syumoku3").val(),
+          weight3_1:$("#weight3_1").val(),
+          weight3_2:$("#weight3_2").val(),
+          weight3_3:$("#weight3_3").val(),
+          weight3_4:$("#weight3_4").val(),
+          weight3_5:$("#weight3_5").val(),
+          rep3_1:$("#rep3_1").val(),
+          rep3_2:$("#rep3_2").val(),
+          rep3_3:$("#rep3_3").val(),
+          rep3_4:$("#rep3_4").val(),
+          rep3_5:$("#rep3_5").val(),
+
+          syumoku4:$("#syumoku4").val(),
+          weight4_1:$("#weight4_1").val(),
+          weight4_2:$("#weight4_2").val(),
+          weight4_3:$("#weight4_3").val(),
+          weight4_4:$("#weight4_4").val(),
+          weight4_5:$("#weight4_5").val(),
+          rep4_1:$("#rep4_1").val(),
+          rep4_2:$("#rep4_2").val(),
+          rep4_3:$("#rep4_3").val(),
+          rep4_4:$("#rep4_4").val(),
+          rep4_5:$("#rep4_5").val(),
+
+          syumoku5:$("#syumoku5").val(),
+          weight5_1:$("#weight5_1").val(),
+          weight5_2:$("#weight5_2").val(),
+          weight5_3:$("#weight5_3").val(),
+          weight5_4:$("#weight5_4").val(),
+          weight5_5:$("#weight5_5").val(),
+          rep5_1:$("#rep5_1").val(),
+          rep5_2:$("#rep5_2").val(),
+          rep5_3:$("#rep5_3").val(),
+          rep5_4:$("#rep5_4").val(),
+          rep5_5:$("#rep5_5").val(),
+
+          syumoku6:$("#syumoku6").val(),
+          weight6_1:$("#weight6_1").val(),
+          weight6_2:$("#weight6_2").val(),
+          weight6_3:$("#weight6_3").val(),
+          weight6_4:$("#weight6_4").val(),
+          weight6_5:$("#weight6_5").val(),
+          rep6_1:$("#rep6_1").val(),
+          rep6_2:$("#rep6_2").val(),
+          rep6_3:$("#rep6_3").val(),
+          rep6_4:$("#rep6_4").val(),
+          rep6_5:$("#rep6_5").val(),
+
+          syumoku7:$("#syumoku7").val(),
+          weight7_1:$("#weight7_1").val(),
+          weight7_2:$("#weight7_2").val(),
+          weight7_3:$("#weight7_3").val(),
+          weight7_4:$("#weight7_4").val(),
+          weight7_5:$("#weight7_5").val(),
+          rep7_1:$("#rep7_1").val(),
+          rep7_2:$("#rep7_2").val(),
+          rep7_3:$("#rep7_3").val(),
+          rep7_4:$("#rep7_4").val(),
+          rep7_5:$("#rep7_5").val(),
+
+          syumoku8:$("#syumoku8").val(),
+          weight8_1:$("#weight8_1").val(),
+          weight8_2:$("#weight8_2").val(),
+          weight8_3:$("#weight8_3").val(),
+          weight8_4:$("#weight8_4").val(),
+          weight8_5:$("#weight8_5").val(),
+          rep8_1:$("#rep8_1").val(),
+          rep8_2:$("#rep8_2").val(),
+          rep8_3:$("#rep8_3").val(),
+          rep8_4:$("#rep8_4").val(),
+          rep8_5:$("#rep8_5").val(),
+        })
+      })
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+
+.header_m{
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  font-family: serif;
+}
+
+body{
+  font-family: serif;
+  background-color: rgb(248, 247, 232);
+}
+
+.header_wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.header_img{
+  margin-right: 20px;
+  margin-top: 11px;
+  width: 60px;
+  height: 60px;
+}
+
+hr {
+  border-style: none;
+  border-top: 3px solid gray
+}
+
+.menu{
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.home{
+font-size: 18px;
+margin: 12px 0 5px;
+}
+.rireki{
+  font-size: 18px;
+}
+
+.title{
+  display: flex;
+}
+.title_message{
+  font-size: 18px;
+  font-weight: bold;
+}
+.date_wrapper{
+  border-top:2px solid black;
+  border-right:1px solid black;
+  border-bottom:2px solid black;
+  border-left:2px solid black;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.start_time_wrapper{
+  border-top:2px solid black;
+  border-right:1px solid black;
+  border-bottom:2px solid black;
+  border-left:0px solid black;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.start_time{
+  padding-left: 10px;
+}
+
+.keika_time_wrapper{
+  border-top:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  border-left:0px solid black;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.keika_time{
+  padding-left: 10px;
+}
+
+.record{
+  margin-bottom: 30px;
+}
+
+.syumoku{
+  height: 30px;
+  width: 150px;
+}
+
+.kg{
+  width: 50px;
+  margin-right: 5px;
+}
+
+.kai{
+  width: 35px;
+  margin-left: 5px;
+}
+
+.record_title{
+  text-align: center;
+}
+
+.record_content{
+  text-align: center;
+}
+
+.workout_end{
+  margin: 40px 0 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.save{
+  margin-top: 20px;
+  color: #000;
+  background-color: #fff100;
+  box-shadow: 0 5px #ccc100;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  box-shadow: none;
+  transform: translate(0, 3px);
+  color: #000;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+
+/* start.html */
+
+.tr_start{
+  color: #000;
+  background-color: #fff100;
+  box-shadow: 0 5px #ccc100;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px auto ;
+}
+
+.tr_rireki{
+  margin-top: 20px;
+  color: #000;
+  background-color: #fff100;
+  box-shadow: 0 5px #ccc100;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px auto 0;
+}
+
+
+.home_btn{
+  margin: 40px 0 40px;
+  display: flex;
+  justify-content: center;
+ /* align-items: center; */
+  flex-direction: column;
+}

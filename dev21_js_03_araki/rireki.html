@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筋トレ管理</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header_wrapper">
+      <div class="col-sm-10 title">
+       <img src="img/1.jpg" class="header_img">
+        <h1 class="header_m">GOLD'S GYM TRAINING NOTE</h1>
+      </div>
+      <div class="menu col-sm-2 ">
+        <a href="home.html" class="home" onclick="location.href=`home.html`">HOMEへ戻る</a>
+      </div>
+    </header>
+  </div>
+  <hr>
+  <div class="container rireki_contents">
+    <label for="date_select">日付選択：</label>
+    <!-- 開始ボタンをクリックした時間を挿入 -->
+    <select name="date_select" id="date_select" class="date_select">
+      <option></option>
+      <!-- <option></option>
+      <div id="date_list"></div> -->
+    </select>
+    <button id="date_decide">決定</button>
+  </div>
+  <div class="container record_content" id="record_content">
+      <table class="table">
+        
+        <thead>
+          <tr>
+            <th scope="col" class="record_title">種目</th>
+            <th scope="col" class="record_title">1set</th>
+            <th scope="col" class="record_title">2set</th>
+            <th scope="col" class="record_title">3set</th>
+            <th scope="col" class="record_title">4set</th>
+            <th scope="col" class="record_title">5set</th>
+          </tr>
+        </thead>
+        <!-- 1種目目 -->
+        <tbody class="table-warning">
+          <th scope="row" class="record_content">
+            <span id="syumoku1"></span>
+          </th>
+          <td class="record_content"><span id="weight1_1"></td>
+          <td class="record_content"><span id="weight1_2"></td>
+          <td class="record_content"><span id="weight1_3"></td>
+          <td class="record_content"><span id="weight1_4"></td>
+          <td class="record_content"><span id="weight1_5"></td>
+        </tbody>
+        <!-- 以下2-8種目目（for文で繰り返し処理試みましたが挫折しました。。。） -->
+        <tbody class="table-secondary">
+          <th scope="row" class="record_content">
+            <span id="syumoku2"></span>
+          </th>
+          <td class="record_content"><span id="weight2_1"></td>
+          <td class="record_content"><span id="weight2_2"></td>
+          <td class="record_content"><span id="weight2_3"></td>
+          <td class="record_content"><span id="weight2_4"></td>
+          <td class="record_content"><span id="weight2_5"></td>
+        </tbody>
+        <tbody class="table-warning">
+          <th scope="row" class="record_content">
+            <span id="syumoku3"></span>
+          </th>
+          <td class="record_content"><span id="weight3_1"></td>
+          <td class="record_content"><span id="weight3_2"></td>
+          <td class="record_content"><span id="weight3_3"></td>
+          <td class="record_content"><span id="weight3_4"></td>
+          <td class="record_content"><span id="weight3_5"></td>
+        </tbody>
+        <tbody class="table-secondary">
+          <th scope="row" class="record_content">
+            <span id="syumoku4"></span>
+          </th>
+          <td class="record_content"><span id="weight4_1"></td>
+          <td class="record_content"><span id="weight4_2"></td>
+          <td class="record_content"><span id="weight4_3"></td>
+          <td class="record_content"><span id="weight4_4"></td>
+          <td class="record_content"><span id="weight4_5"></td>
+        </tbody>
+        <tbody class="table-warning">
+          <th scope="row" class="record_content">
+            <span id="syumoku5"></span>
+          </th>
+          <td class="record_content"><span id="weight5_1"></td>
+          <td class="record_content"><span id="weight5_2"></td>
+          <td class="record_content"><span id="weight5_3"></td>
+          <td class="record_content"><span id="weight5_4"></td>
+          <td class="record_content"><span id="weight5_5"></td>
+        </tbody>
+        <tbody  class="table-secondary">
+          <th scope="row" class="record_content">
+            <span id="syumoku6"></span>
+          </th>
+          <td class="record_content"><span id="weight6_1"></td>
+          <td class="record_content"><span id="weight6_2"></td>
+          <td class="record_content"><span id="weight6_3"></td>
+          <td class="record_content"><span id="weight6_4"></td>
+          <td class="record_content"><span id="weight6_5"></td>
+        </tbody>
+        <tbody class="table-warning">
+          <th scope="row" class="record_content">
+            <span id="syumoku7"></span>
+          </th>
+          <td class="record_content"><span id="weight7_1"></td>
+          <td class="record_content"><span id="weight7_2"></td>
+          <td class="record_content"><span id="weight7_3"></td>
+          <td class="record_content"><span id="weight7_4"></td>
+          <td class="record_content"><span id="weight7_5"></td>
+        </tbody>
+        <tbody class="table-secondary">
+          <th scope="row" class="record_content">
+            <span id="syumoku8"></span>
+          </th>
+          <td class="record_content"><span id="weight8_1"></td>
+          <td class="record_content"><span id="weight8_2"></td>
+          <td class="record_content"><span id="weight8_3"></td>
+          <td class="record_content"><span id="weight8_4"></td>
+          <td class="record_content"><span id="weight8_5"></td>
+        </tbody>
+      </table>
+    </div>
+    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase.js"></script>
+    <script>
+      // 表を非表示
+      document.getElementById("record_content").style.display ="none";
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyAH9PHBS9qYb1e7RSXMBJfAWHWWKh5dEVg",
+          authDomain: "workout-memo-e1313.firebaseapp.com",
+          projectId: "workout-memo-e1313",
+          storageBucket: "workout-memo-e1313.appspot.com",
+          messagingSenderId: "631920409298",
+          appId: "1:631920409298:web:f2efe11c07fb65680c8b0b",
+          databaseURL: "https://workout-memo-e1313-default-rtdb.firebaseio.com/",
+        };
+      firebase.initializeApp(firebaseConfig);
+      const newPostRef = firebase.database();
+      newPostRef.ref().on("child_added",function(data){
+        let v=data.val();
+        let str =`<option>${v.date}</option>`
+        $("#date_select").append(str);
+      })
+
+      $("#date_decide").on("click",function(){
+        rireki_display();
+        const d = $("#date_select").val()
+        console.log(d)
+        newPostRef.ref(d).on("value",function(data){
+        let v = data.val();
+        $("#syumoku1").append(v.syumoku1);
+        $("#syumoku2").append(v.syumoku2);
+        $("#syumoku3").append(v.syumoku3);
+        $("#syumoku4").append(v.syumoku4);
+        $("#syumoku5").append(v.syumoku5);
+        $("#syumoku6").append(v.syumoku6);
+        $("#syumoku7").append(v.syumoku7);
+        $("#syumoku8").append(v.syumoku8);
+
+        $("#weight1_1").append(v.weight1_1+" × "+v.rep1_1);
+        $("#weight1_2").append(v.weight1_2+" × "+v.rep1_2);
+        $("#weight1_3").append(v.weight1_3+" × "+v.rep1_3);
+        $("#weight1_4").append(v.weight1_4+" × "+v.rep1_4);
+        $("#weight1_5").append(v.weight1_5+" × "+v.rep1_5);
+        $("#weight2_1").append(v.weight2_1+" × "+v.rep2_1);
+        $("#weight2_2").append(v.weight2_2+" × "+v.rep2_2);
+        $("#weight2_3").append(v.weight2_3+" × "+v.rep2_3);
+        $("#weight2_4").append(v.weight2_4+" × "+v.rep2_4);
+        $("#weight2_5").append(v.weight2_5+" × "+v.rep2_5);
+        $("#weight3_1").append(v.weight3_1+" × "+v.rep3_1);
+        $("#weight3_2").append(v.weight3_2+" × "+v.rep3_2);
+        $("#weight3_3").append(v.weight3_3+" × "+v.rep3_3);
+        $("#weight3_4").append(v.weight3_4+" × "+v.rep3_4);
+        $("#weight3_5").append(v.weight3_5+" × "+v.rep3_5);
+        $("#weight4_1").append(v.weight4_1+" × "+v.rep4_1);
+        $("#weight4_2").append(v.weight4_2+" × "+v.rep4_2);
+        $("#weight4_3").append(v.weight4_3+" × "+v.rep4_3);
+        $("#weight4_4").append(v.weight4_4+" × "+v.rep4_4);
+        $("#weight4_5").append(v.weight4_5+" × "+v.rep4_5);
+        $("#weight5_1").append(v.weight5_1+" × "+v.rep5_1);
+        $("#weight5_2").append(v.weight5_2+" × "+v.rep5_2);
+        $("#weight5_3").append(v.weight5_3+" × "+v.rep5_3);
+        $("#weight5_4").append(v.weight5_4+" × "+v.rep5_4);
+        $("#weight5_5").append(v.weight5_5+" × "+v.rep5_5);
+        $("#weight6_1").append(v.weight6_1+" × "+v.rep6_1);
+        $("#weight6_2").append(v.weight6_2+" × "+v.rep6_2);
+        $("#weight6_3").append(v.weight6_3+" × "+v.rep6_3);
+        $("#weight6_4").append(v.weight6_4+" × "+v.rep6_4);
+        $("#weight6_5").append(v.weight6_5+" × "+v.rep6_5);
+        $("#weight7_1").append(v.weight7_1+" × "+v.rep7_1);
+        $("#weight7_2").append(v.weight7_2+" × "+v.rep7_2);
+        $("#weight7_3").append(v.weight7_3+" × "+v.rep7_3);
+        $("#weight7_4").append(v.weight7_4+" × "+v.rep7_4);
+        $("#weight7_5").append(v.weight7_5+" × "+v.rep7_5);
+        $("#weight8_1").append(v.weight8_1+" × "+v.rep8_1);
+        $("#weight8_2").append(v.weight8_2+" × "+v.rep8_2);
+        $("#weight8_3").append(v.weight8_3+" × "+v.rep8_3);
+        $("#weight8_4").append(v.weight8_4+" × "+v.rep8_4);
+        $("#weight8_5").append(v.weight8_5+" × "+v.rep8_5);
+
+      })
+
+      })
+
+
+
+
+      // 履歴表示のファンクション
+      function rireki_display(){
+        document.getElementById("record_content").style.display ="table";
+      }
+
+
+    </script>
+
+</body>
+
+</html>
