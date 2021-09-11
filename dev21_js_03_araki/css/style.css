@@ -101,7 +101,7 @@ margin: 12px 0 5px;
 
 .syumoku{
   height: 30px;
-  width: 150px;
+  width: 120px;
 }
 
 .kg{
@@ -179,4 +179,17 @@ margin: 12px 0 5px;
   justify-content: center;
  /* align-items: center; */
   flex-direction: column;
+}
+
+.syumoku_plus{
+  width: 18px;
+  margin-left:10px;
+  margin-bottom: 3px;
+}
+
+.syumoku_btn{
+  border-radius: 3px;
+  font-size: 12px;
+  width: 40px;
+  margin: 0 0 3px 3px;
 }
