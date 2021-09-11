@@ -362,7 +362,7 @@
           rep8_5:$("#rep8_5").val(),
         })
       })
-
+ //決定を押したら最近の筋トレ履歴が出てくるようにしたかったのですができませんでした
       $("#syumoku1_decide").on("click",function(){
         newPostRef.ref().orderByChild("date").limitToLast(1).on("child_added",function(data){
         let v=data.val();
