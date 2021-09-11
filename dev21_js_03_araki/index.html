@@ -51,7 +51,7 @@
       
       <thead>
         <tr>
-          <th scope="col" class="record_title">種目</th>
+          <th scope="col" class="record_title">種目<span><img src="img/plus.jpg" class="syumoku_plus" id="syumoku_plus"></span></th>
           <th scope="col" class="record_title">1set</th>
           <th scope="col" class="record_title">2set</th>
           <th scope="col" class="record_title">3set</th>
@@ -69,6 +69,7 @@
             <option >デッドリフト</option>
             <option>チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku1_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight1_1">×<input type="text" class="kai" placeholder="(回)" id="rep1_1"></td>
         <td class="record_content"><input type="text" class="kg"id="weight1_2">×<input type="text" class="kai"id="rep1_2"></td>
@@ -86,6 +87,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku2_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight2_1">×<input type="text" class="kai" placeholder="(回)" id="rep2_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight2_2">×<input type="text" class="kai" id="rep2_2"></td>
@@ -102,6 +104,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku3_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight3_1">×<input type="text" class="kai" placeholder="(回)" id="rep3_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight3_2">×<input type="text" class="kai" id="rep3_2"></td>
@@ -118,6 +121,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku4_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight4_1">×<input type="text" class="kai" placeholder="(回)" id="rep4_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight4_2">×<input type="text" class="kai" id="rep4_2"></td>
@@ -134,6 +138,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku5_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight5_1">×<input type="text" class="kai" placeholder="(回)" id="rep5_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight5_2">×<input type="text" class="kai" id="rep5_2"></td>
@@ -150,6 +155,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku6_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight6_1">×<input type="text" class="kai" placeholder="(回)" id="rep6_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight6_2">×<input type="text" class="kai" id="rep6_2"></td>
@@ -166,6 +172,7 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku7_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight7_1">×<input type="text" class="kai" placeholder="(回)" id="rep7_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight7_2">×<input type="text" class="kai" id="rep7_2"></td>
@@ -182,12 +189,21 @@
             <option >デッドリフト</option>
             <option >チンニング</option>
           </select>
+          <span><button class="syumoku_btn" id="syumoku8_decide">決定</button></span>
         </th>
         <td class="record_content"><input type="text" class="kg" placeholder="  (kg)" id="weight8_1">×<input type="text" class="kai" placeholder="(回)" id="rep8_1"></td>
         <td class="record_content"><input type="text" class="kg" id="weight8_2">×<input type="text" class="kai" id="rep8_2"></td>
         <td class="record_content"><input type="text" class="kg" id="weight8_3">×<input type="text" class="kai" id="rep8_3"></td>
         <td class="record_content"><input type="text" class="kg" id="weight8_4">×<input type="text" class="kai" id="rep8_4"></td>
         <td class="record_content"><input type="text" class="kg" id="weight8_5">×<input type="text" class="kai" id="rep8_5"></td>
+      </tbody>      
+      <tbody class="table-primary">
+        <th scope="row" class="record_content">前回</th>
+        <td class="record_content"><span id="zenkai_1"></td>
+          <td class="record_content"><span id="zenkai_2"></td>
+          <td class="record_content"><span id="zenkai_3"></td>
+          <td class="record_content"><span id="zenkai_4"></td>
+          <td class="record_content"><span id="zenkai_5"></td>
       </tbody>
       
     </table>
@@ -345,6 +361,20 @@
           rep8_4:$("#rep8_4").val(),
           rep8_5:$("#rep8_5").val(),
         })
+      })
+
+      $("#syumoku1_decide").on("click",function(){
+        newPostRef.ref().orderByChild("date").limitToLast(1).on("child_added",function(data){
+        let v=data.val();
+        console.log(v)
+        $("#zenkai_1").append(v.weight1_1+" × "+v.rep1_1);
+        $("#zenkai_2").append(v.weight1_2+" × "+v.rep1_2);
+        $("#zenkai_3").append(v.weight1_3+" × "+v.rep1_3);
+        $("#zenkai_4").append(v.weight1_4+" × "+v.rep1_4);
+        $("#zenkai_5").append(v.weight1_5+" × "+v.rep1_5);
+      })
+
+
       })
 
 
